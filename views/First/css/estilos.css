@@ -1,0 +1,712 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --vino: #510014;
+    --vino-claro: #790020;
+    --rosa: #d86d78;
+    --rosa-pastel: #f8dce1;
+    --dorado: #d6b477;
+    --blanco: #fffaf8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 20%,
+            rgba(216,109,120,.2), transparent 35%),
+        radial-gradient(circle at 80% 80%,
+            rgba(214,180,119,.12), transparent 35%),
+        linear-gradient(135deg,
+            #26000d, var(--vino), #350010);
+
+    color: var(--blanco);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.contenedor {
+    width: min(1100px, 92%);
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.inicio {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 55px 0 30px;
+}
+
+.simbolo {
+    color: var(--dorado);
+    font-size: 42px;
+    margin-bottom: 10px;
+    animation: latido 2s infinite;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(65px, 10vw, 115px);
+    font-weight: normal;
+    color: var(--rosa-pastel);
+    text-shadow: 0 0 35px rgba(216,109,120,.3);
+}
+
+.subtitulo {
+    max-width: 620px;
+    margin: 10px auto 45px;
+    color: #f0cbd1;
+    font-weight: 300;
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+    max-width: 850px;
+}
+
+.tarjeta {
+    padding: 45px 30px;
+    border-radius: 22px;
+    text-decoration: none;
+    color: var(--blanco);
+    background: rgba(255,255,255,.065);
+    border: 1px solid rgba(214,180,119,.35);
+    backdrop-filter: blur(12px);
+    transition: .4s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,.1);
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+
+.tarjeta-icono {
+    font-size: 65px;
+    margin-bottom: 20px;
+}
+
+.tarjeta h2,
+.mensaje h2,
+.carta h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: var(--dorado);
+}
+
+.tarjeta h2 {
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.tarjeta p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: #efd6da;
+    margin-bottom: 30px;
+}
+
+.boton {
+    display: inline-block;
+    padding: 13px 28px;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(135deg,
+        var(--rosa), var(--vino-claro));
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,.2);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.boton:hover {
+    box-shadow: 0 0 25px rgba(216,109,120,.5);
+    transform: scale(1.04);
+}
+
+footer {
+    margin-top: 60px;
+    color: #d7a9b1;
+    font-size: 12px;
+}
+
+/* Páginas interiores */
+
+.pagina-especial {
+    padding: 75px 0 90px;
+    max-width: 800px;
+}
+
+.volver {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    color: var(--rosa-pastel);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.volver:hover {
+    color: var(--dorado);
+}
+
+.mensaje,
+.carta {
+    background: rgba(255,250,248,.97);
+    color: #59303a;
+    border-radius: 18px;
+    padding: 50px 45px;
+    margin: 35px auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,.3);
+    border: 1px solid var(--dorado);
+}
+
+.mensaje h2,
+.carta h2 {
+    font-size: 26px;
+    color: var(--vino-claro);
+    margin-bottom: 30px;
+}
+
+.mensaje p,
+.carta p {
+    line-height: 2.1;
+    font-size: 15px;
+    margin-bottom: 23px;
+}
+
+.frase-final {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px !important;
+    color: var(--vino-claro);
+    font-style: italic;
+}
+
+.firma {
+    font-family: 'Great Vibes', cursive;
+    font-size: 32px;
+    color: var(--vino-claro);
+    margin-top: 35px;
+}
+
+.oculto {
+    display: none;
+}
+
+.sorpresa {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    color: var(--rosa-pastel);
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    line-height: 1.8;
+    animation: aparecer 1s ease;
+}
+
+/* Pastel */
+
+.pastel {
+    width: 230px;
+    height: 240px;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.plato {
+    position: absolute;
+    width: 230px;
+    height: 18px;
+    background: #e8c8cd;
+    border-radius: 50%;
+    bottom: 0;
+}
+
+.capa {
+    position: absolute;
+    left: 25px;
+    width: 180px;
+    border-radius: 12px 12px 5px 5px;
+}
+
+.capa-inferior {
+    bottom: 12px;
+    height: 75px;
+    background: linear-gradient(#d86d78, #a83752);
+    border-bottom: 12px solid #f5c3cb;
+}
+
+.capa-superior {
+    bottom: 87px;
+    height: 65px;
+    background: linear-gradient(#f5c3cb, #d86d78);
+    border-top: 15px solid #fff0e7;
+}
+
+.vela {
+    position: absolute;
+    width: 12px;
+    height: 48px;
+    background: repeating-linear-gradient(
+        45deg,
+        #fff 0px,
+        #fff 8px,
+        #d86d78 8px,
+        #d86d78 13px
+    );
+    left: 109px;
+    bottom: 152px;
+    z-index: 2;
+}
+
+.llama {
+    position: absolute;
+    width: 17px;
+    height: 28px;
+    left: 106px;
+    bottom: 202px;
+    background: #ffca62;
+    border-radius: 80% 0 80% 80%;
+    transform: rotate(-45deg);
+    box-shadow: 0 0 25px #ffba44;
+    animation: fuego .8s infinite alternate;
+}
+
+/* Sobre romántico */
+
+.sobre-contenedor {
+    cursor: pointer;
+    margin: 55px auto;
+    width: fit-content;
+}
+
+.sobre {
+    width: 280px;
+    height: 180px;
+    background: #d86d78;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 20px 45px rgba(0,0,0,.3);
+    transition: transform .4s;
+    overflow: hidden;
+}
+
+.sobre-contenedor:hover .sobre {
+    transform: translateY(-8px);
+}
+
+.sobre-solapa {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 140px solid transparent;
+    border-right: 140px solid transparent;
+    border-top: 110px solid #f2b1bb;
+    z-index: 1;
+}
+
+.sobre-corazon {
+    position: absolute;
+    top: 65px;
+    left: 119px;
+    font-size: 38px;
+    color: var(--vino);
+    z-index: 2;
+}
+
+.indicacion {
+    margin-top: 25px;
+    font-size: 13px;
+    color: var(--rosa-pastel);
+}
+
+.carta {
+    animation: aparecer 1.2s ease;
+}
+
+/* Corazones flotantes */
+
+.corazon-flotante {
+    position: fixed;
+    bottom: -40px;
+    pointer-events: none;
+    color: rgba(255,185,200,.55);
+    animation: flotar linear forwards;
+    z-index: 1;
+}
+
+/* Animaciones */
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .8;
+    }
+    85% {
+        opacity: .8;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(30deg);
+        opacity: 0;
+    }
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fuego {
+    from {
+        transform: rotate(-45deg) scale(1);
+    }
+    to {
+        transform: rotate(-45deg) scale(1.15);
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 700px) {
+    .tarjetas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tarjeta {
+        padding: 35px 25px;
+    }
+
+    .pagina-especial {
+        padding-top: 85px;
+    }
+
+    .mensaje,
+    .carta {
+        padding: 35px 22px;
+    }
+
+    .mensaje p,
+    .carta p {
+        font-size: 14px;
+    }
+
+    .subtitulo {
+        font-size: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* ======================================
+   CARTA DE AMOR - DISEÑO MEJORADO
+====================================== */
+
+.pagina-amor .amor-especial {
+    max-width: 850px;
+    padding-top: 65px;
+}
+
+.pagina-amor .amor-especial h1 {
+    font-size: clamp(48px, 7vw, 78px);
+    line-height: 1.25;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.pagina-amor .amor-especial .subtitulo {
+    max-width: 490px;
+    margin: 18px auto 30px;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.pagina-amor .escena-sobre {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 45px;
+    perspective: 1000px;
+}
+
+.pagina-amor .sobre-interactivo {
+    display: block;
+    width: 300px;
+    height: 195px;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    filter: drop-shadow(0 18px 22px rgba(0,0,0,.3));
+    transition: transform .4s ease;
+}
+
+.pagina-amor .sobre-interactivo:hover {
+    transform: translateY(-7px);
+}
+
+.pagina-amor .sobre-interactivo:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 8px;
+}
+
+.pagina-amor .sobre-base {
+    position: absolute;
+    inset: 0;
+    background: #b94e65;
+    border-radius: 7px;
+    z-index: 1;
+}
+
+.pagina-amor .sobre-carta-interior {
+    position: absolute;
+    width: 250px;
+    height: 155px;
+    left: 25px;
+    bottom: 12px;
+    background: #fff5ec;
+    border-radius: 5px;
+    z-index: 2;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 25px;
+    color: #790020;
+    font-family: 'Great Vibes', cursive;
+    font-size: 35px;
+    transition: transform 1.1s ease .35s;
+}
+
+.pagina-amor .sobre-solapa-nueva {
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    top: 0;
+    left: 0;
+    background: #f0aab8;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    transform-origin: top center;
+    transition: transform .8s ease;
+    z-index: 5;
+}
+
+.pagina-amor .sobre-frente {
+    position: absolute;
+    inset: 0;
+    background: #d86d78;
+    clip-path: polygon(
+        0 0,
+        50% 55%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+    z-index: 4;
+    border-radius: 5px;
+}
+
+.pagina-amor .sobre-sello {
+    position: absolute;
+    top: 89px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    background: #790020;
+    border: 2px solid #d6b477;
+    border-radius: 50%;
+    color: #f9d6dd;
+    font-size: 23px;
+    z-index: 6;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    transition: opacity .3s ease;
+}
+
+/* Animación de apertura */
+
+.pagina-amor .sobre-interactivo.abierto
+.sobre-solapa-nueva {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.pagina-amor .sobre-interactivo.abierto
+.sobre-sello {
+    opacity: 0;
+}
+
+.pagina-amor .sobre-interactivo.abierto
+.sobre-carta-interior {
+    transform: translateY(-115px);
+    z-index: 3;
+}
+
+.pagina-amor .sobre-interactivo.abierto {
+    pointer-events: none;
+}
+
+.pagina-amor .indicacion {
+    margin: 30px auto 0;
+    max-width: 330px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #f3cbd3;
+}
+
+/* Carta */
+
+.pagina-amor .carta-romantica {
+    max-width: 680px;
+    padding: 55px 55px 45px;
+    margin: 50px auto 0;
+    border-radius: 8px;
+    background:
+        linear-gradient(
+            rgba(255,250,246,.96),
+            rgba(255,245,240,.97)
+        );
+    border: 1px solid #d6b477;
+    box-shadow:
+        0 25px 65px rgba(0,0,0,.3),
+        inset 0 0 0 9px rgba(214,180,119,.09);
+}
+
+.pagina-amor .carta-romantica.oculto {
+    display: none;
+}
+
+.pagina-amor .carta-romantica:not(.oculto) {
+    animation: mostrarCarta 1.2s ease both;
+}
+
+.pagina-amor .adorno-carta {
+    color: #b54e65;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.pagina-amor .carta-romantica h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 30px);
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.pagina-amor .separador-carta {
+    color: #c39760;
+    font-size: 20px;
+    letter-spacing: 12px;
+    margin: 25px 0 35px;
+}
+
+.pagina-amor .carta-romantica p {
+    font-size: 15px;
+    line-height: 2.15;
+    margin-bottom: 25px;
+}
+
+.pagina-amor .carta-romantica .frase-final {
+    font-size: 20px !important;
+    line-height: 2;
+}
+
+.pagina-amor .carta-romantica .firma {
+    font-size: 35px;
+    line-height: 1.4;
+}
+
+.pagina-amor .boton-cerrar-carta {
+    margin-top: 35px;
+}
+
+@keyframes mostrarCarta {
+    from {
+        opacity: 0;
+        transform: translateY(65px) scale(.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 700px) {
+    .pagina-amor .amor-especial h1 {
+        font-size: clamp(46px, 11vw, 65px);
+    }
+
+    .pagina-amor .escena-sobre {
+        padding-top: 30px;
+    }
+
+    .pagina-amor .sobre-interactivo {
+        transform: scale(.9);
+    }
+
+    .pagina-amor .sobre-interactivo:hover {
+        transform: scale(.9);
+    }
+
+    .pagina-amor .carta-romantica {
+        padding: 40px 23px;
+    }
+
+    .pagina-amor .carta-romantica p {
+        font-size: 14px;
+        line-height: 2;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pagina-amor .sobre-interactivo,
+    .pagina-amor .sobre-carta-interior,
+    .pagina-amor .sobre-solapa-nueva,
+    .pagina-amor .sobre-sello {
+        transition-duration: .01ms;
+    }
+}
